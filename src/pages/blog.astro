@@ -1,22 +1,11 @@
 ---
-const pageTitle = "Blog"
+import '../styles/global.css';
+import BaseLayout from '../layouts/baseLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <a href="/portfolio">Home</a>
-    <a href="/portfolio/about/">About</a>
-    <a href="/portfolio/blog/">Blog</a>
-
-    <h1>{pageTitle}</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-    <ul>
-      <li><a href="/portfolio/posts/post-1/">Post 1</a></li>
-    </ul>
-  </body>
-</html>
+<BaseLayout pageTitle="Blog">
+  <p>This is where I will post about my journey learning Astro.</p>
+  <ul>
+    <li><a href="/portfolio/posts/post-1/">Post 1</a></li>
+  </ul>
+</BaseLayout>
