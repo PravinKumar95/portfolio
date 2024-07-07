@@ -6,13 +6,17 @@ const {pageTitle} = Astro.props
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class="bg-[url('/portfolio/bg.jpg')] backdrop-blur bg-cover w-full h-svh bg-no-repeat bg-center">
-		<Header/>
-		<slot/>
+	<body class="bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+		<div class="mx-auto  min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+			<div class="lg:flex lg:justify-between lg:gap-4">
+				<Header/>
+				<slot/>
+			</div>
+		</div>
 	</body>
 </html>

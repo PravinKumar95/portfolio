@@ -1,8 +1,15 @@
 ---
 import BaseLayout from "../layouts/baseLayout.astro"
-import Hero from "../sections/Hero"
+import Section from "../components/Section"
 ---
 
-<BaseLayout pageTitle="Porfolio" >
-	<Hero/>
+<BaseLayout pageTitle="Pravin Kumar" >
+	<main class="pt-24 lg:w-1/2">
+		<Section title="About">
+			Hello! I'm <strong>Pravin</strong>, a passionate and dedicated professional based in Bengaluru, India.
+			Over the years, I've honed my skills in React, Typescript, MongoDB, WebGL and I'm always eager to learn more and take on new challenges. I believe in the power of technology to transform lives and industries, and I strive to be at the forefront of this change.
+			In my spare time, I enjoy playing video games, which helps me stay balanced and inspired. 
+			Feel free to browse through my portfolio to see some of the projects I've worked on. If you have any questions or would like to discuss potential collaborations, don't hesitate to get in touch!
+		</Section>	
+	</main>
 </BaseLayout>
