@@ -1,12 +1,31 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
+@layer base {
+  body {
+    @apply bg-batman-bg-primary text-batman-text-primary;
+    /* Apply the default sans-serif font stack from tailwind.config.js */
+    font-family: theme("fontFamily.sans");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-#canvas-container {
-  width: 100vw;
-  height: 100vh;
+  /* Optional: Styling scrollbars for a more themed look (for Webkit browsers) */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-batman-bg-secondary; /* Or a slightly different dark color */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-batman-accent;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-batman-accent-hover;
+  }
 }
