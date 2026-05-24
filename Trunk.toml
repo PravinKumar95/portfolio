@@ -1,0 +1,7 @@
+[build]
+target = "index.html"
+
+[[hooks]]
+stage = "pre_build"
+command = "sh"
+command_arguments = ["-c", "./node_modules/.bin/tailwindcss -i ./input.css -o ./style.css"]
