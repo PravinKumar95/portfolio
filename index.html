@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <title>Portfolio - Leptos</title>
-    <link rel="stylesheet" href="/portfolio/style-4a7e67826d44c16d.css" integrity="sha384-Og+r59V78DI6HU1dblmTcfINPv5ZmYTbaPumOgXi4U8ut6tLIvcsev58kb7nMAWz"/>
-  <link rel="modulepreload" href="/portfolio/portfolio-8a6144fc27859960.js" crossorigin="anonymous" integrity="sha384-INUI1OEgFyILPK1zuSGQXO0OWTzAEF+5Q9dCP6Ai9Sj+D3T3P+d4iEiefm7Hyptq"><link rel="preload" href="/portfolio/portfolio-8a6144fc27859960_bg.wasm" crossorigin="anonymous" integrity="sha384-Zcmsftw1PMGG/u7in4TRutYH30NxygdAal7dG7FyJeCc+CWWbky54dryzEZ1cb99" as="fetch" type="application/wasm"></head>
-  <body class="bg-gray-900">
-<script type="module">
-import init, * as bindings from '/portfolio/portfolio-8a6144fc27859960.js';
-const wasm = await init({ module_or_path: '/portfolio/portfolio-8a6144fc27859960_bg.wasm' });
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Pravin Kumar — Tech Lead specializing in edge-to-cloud distributed platforms, embedded systems, C# microservices, AWS serverless, and engineering leadership." />
+
+    <meta name="keywords" content="Tech Lead, Software Architect, Pravin Kumar, AWS, C#, Embedded Linux, QEMU, EventBridge, Domain-Driven Design, Rust, WebAssembly, Dioxus" />
+    <meta name="author" content="Pravin Kumar" />
+    <meta name="theme-color" content="#020617" />
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pravin Kumar | Tech Lead & Distributed Systems Architect" />
+    <meta property="og:description" content="Bridging embedded edge systems, AWS cloud infrastructure, and mission-critical fleet platforms." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='46' fill='white'>PK</text></svg>" />
+
+    <link rel="stylesheet" href="/portfolio/assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="style.css">
+<link rel="preload" as="script" href="/portfolio/assets/portfolio-c60d2793bf755dc0.js" crossorigin><link rel="preload" as="fetch" type="application/wasm" href="/portfolio/assets/portfolio_bg-59fa4292e386cdc4.wasm" crossorigin></head>
 
 
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script></body>
+  <body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div id="main"></div>
+  <script>
+            // We can't use a module script here because we need to start the script immediately when streaming
+            import("/portfolio/assets/portfolio-c60d2793bf755dc0.js").then(
+                ({ default: init }) => {
+                init("/portfolio/assets/portfolio_bg-59fa4292e386cdc4.wasm").then((wasm) => {
+                    if (wasm.__wbindgen_start == undefined) {
+                    wasm.main();
+                    }
+                });
+                }
+            );
+            </script>
+            
+            </body>
 </html>
+
