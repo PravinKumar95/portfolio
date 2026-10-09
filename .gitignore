@@ -1,4 +1,5 @@
 /target
-dist/
-style.css
 target/
+/dist
+dist/
+/style.css

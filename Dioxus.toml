@@ -1,0 +1,23 @@
+[application]
+name = "portfolio"
+default_platform = "web"
+out_dir = "dist"
+asset_dir = "public"
+hot_reload = true
+
+[web.wasm_opt]
+level = "4"
+
+[web.app]
+title = "Pravin Kumar | Tech Lead & Distributed Systems Architect"
+base_path = "portfolio"
+
+[web.resource]
+style = ["style.css"]
+
+[web.resource.dev]
+style = ["style.css"]
+
+[web.watcher]
+index_on_404 = true
+watch_path = ["src", "public", "input.css"]

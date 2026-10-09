@@ -5,4 +5,19 @@ edition = "2024"
 
 [dependencies]
 console_error_panic_hook = "0.1.7"
-leptos = { version = "0.8.19", features = ["csr"] }
+dioxus = { version = "0.6", features = ["web"] }
+web-sys = { version = "0.3", features = ["Window", "Navigator", "Clipboard"] }
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
+
+

@@ -20,16 +20,18 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
-      - name: Install Trunk
+      - name: Install Dioxus CLI (dx)
         run: |
-          wget -qO- https://github.com/trunk-rs/trunk/releases/latest/download/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
-          sudo mv trunk /usr/local/bin/
+          wget -qO- https://github.com/DioxusLabs/dioxus/releases/download/v0.6.3/dx-x86_64-unknown-linux-gnu-v0.6.3.tar.gz | tar -xzf- -C /usr/local/bin/
+          chmod +x /usr/local/bin/dx
+          dx --version
 
       - name: Install Node.js Dependencies (Tailwind)
         run: npm install
 
-      - name: Build
-        run: trunk build --release
+      - name: Build CSS & Dioxus App
+        run: npm run build
+
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

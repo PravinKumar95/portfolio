@@ -1,8 +1,0 @@
-[build]
-target = "index.html"
-public_url = "/portfolio/"
-
-[[hooks]]
-stage = "pre_build"
-command = "sh"
-command_arguments = ["-c", "./node_modules/.bin/tailwindcss -i ./input.css -o ./style.css"]

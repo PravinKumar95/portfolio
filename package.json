@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./public/style.css --minify && mkdir -p ./public/assets && cp ./public/style.css ./public/assets/style.css && cp ./public/style.css ./style.css",
+    "build": "npm run build:css && dx build --platform web --release && rm -rf dist && cp -r target/dx/portfolio/release/web/public dist && cp public/style.css dist/style.css && cp public/style.css dist/assets/style.css",
+    "serve": "npm run build:css && dx serve --platform web --addr 0.0.0.0 --port 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PravinKumar95/portfolio.git"
